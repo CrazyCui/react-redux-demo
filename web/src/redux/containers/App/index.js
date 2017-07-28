@@ -49,176 +49,41 @@ var App = React.createClass({
 
                 <div id="navigation"  className={active} >
                     <Navigation
-                     style={{backgroundColor:"white",border:"0px"}}
-                     type="tree"
-                     activeDirection="right"
-                     >
-                     <li className="qn-navigation-vertical">
-                       <img style={{width: "24px", verticalAlign: "middle"}} src="image/ebs_log.png"/>
-                       {header}
-                     </li>
+                         style={{backgroundColor:"white",border:"0px"}}
+                         type="tree"
+                         activeDirection="right">
+                        <li className="qn-navigation-vertical">
+                               <img style={{width: "24px", verticalAlign: "middle"}} src="image/ebs_log.png"/>
+                               {header}
+                        </li>
                      </Navigation>
-                    <Navigation
-                     style={{height:"calc(100% - 52px)",backgroundColor:"white",border:"0px",overflowY: "auto"}}
-                     type="tree"
-                     activeDirection="right"
-                     >
-
-                        <Myitem
-                            kind = {active}
-                            itemId="Trade"
-                            icon="form"
-                            link="/dist"
-                            text="订单管理"
-                        >
-                          <Navigation>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/dsd"
-                                  text="待审单"
-                                  ></Myitem>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/ycd"
-                                  text="异常单"
-                                  ></Myitem>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/waitPrint"
-                                  text="订单打印"
-                              ></Myitem>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/SweepCodeCheckSend"
-                                  text="扫码验货"
-                              ></Myitem>
-                               <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/waitWeigh"
-                                  text="称重发货"
-                              ></Myitem>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/SendFail"
-                                  text="发货失败"
-                              ></Myitem>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/WaitPay"
-                                  text="待付款"
-                              ></Myitem>
-                              <Myitem
-                                  itemId="Trade"
-                                  kind = {active}
-                                  link="/dist/hasSend"
-                                  text="已发货"
-                              ></Myitem>
-                          </Navigation>
+                     <Navigation
+                         style={{height:"calc(100% - 52px)",backgroundColor:"white",border:"0px",overflowY: "auto"}}
+                         type="tree"
+                         activeDirection="right">
+                        <Myitem kind = {active} itemId="Trade" icon="form" link="/dist" text="订单管理">
+                            <Navigation>
+                                <Myitem
+                                      itemId="Trade"
+                                      kind = {active}
+                                      link="/dist/inventory"
+                                      text="库存管理"
+                                />
+                                <Myitem
+                                      itemId="Trade"
+                                      kind = {active}
+                                      link="/dist/demo"
+                                      text="Demo"
+                                />
+                            </Navigation>
                         </Myitem>
                         <Myitem
                             itemId="Search"
                             kind = {active}
                             icon="search"
-                            link="/dist/orderSearch"
+                            link="/dist/search"
                             text="订单查询"
-                        ></Myitem>
-                        <Myitem
-                            kind = {active}
-                            itemId="refund"
-                            icon="tuikuan"
-                            link="/dist/Cancel"
-                            text="售后服务"
-                        >
-                            <Navigation>
-                                <Myitem
-                                    itemId="refund"
-                                    kind = {active}
-                                    link="/dist/aftersale"
-                                    text="售后列表"
-                                    >
-                                </Myitem>
-                                <Myitem
-                                    itemId="refund"
-                                    kind = {active}
-                                    link="/dist/refundstorage"
-                                    text="退货入库"
-                                    >
-                                </Myitem>
-                            </Navigation>
-                        </Myitem>
-                        <Myitem
-                            kind = {active}
-                            itemId="Box"
-                            icon="cangku"
-                            link="/dist/Box"
-                            text="库存盘库"
-                        >
-                            <Navigation>
-                                <Myitem
-                                    itemId="Box"
-                                    kind = {active}
-                                    link="/dist/stockControl"
-                                    text="库存管理"
-                                ></Myitem>
-                                <Myitem
-                                itemId="Box"
-                                kind = {active}
-                                link="/dist/stockCheck"
-                                text="库存盘点"
-                                ></Myitem>
-                            </Navigation>
-                        </Myitem>
-                        <Myitem
-                            kind = {active}
-                            itemId="Item"
-                            icon="yifu"
-                            link="/dist/itemManager"
-                            text="商品运营"
-                        >
-                        <Navigation>
-                              <Myitem
-                                  itemId="Item"
-                                  kind = {active}
-                                  link="/dist/itemList"
-                                  text="商品列表"
-                                  ></Myitem>
-                          </Navigation>
-                        </Myitem>
-                        <Myitem
-                            kind = {active}
-                            itemId="Money"
-                            icon="dollar"
-                            link="/dist/Trade"
-                            text="财务工具"
-                        >
-                            <Navigation>
-                                <Myitem
-                                    itemId="Money"
-                                    kind = {active}
-                                    link="/dist/DeliveryTrade"
-                                    text="快递对账"
-                                ></Myitem>
-                            </Navigation>
-                        </Myitem>
-                        <Myitem
-                            kind = {active}
-                            itemId="Setting"
-                            icon="set"
-                            text="设置">
-                            <Navigation>
-                                <Myitem itemId="Setting" kind = {active} link="/dist/InitSet" text="初始化设置" ></Myitem>
-                                <Myitem itemId="Setting" kind = {active} link="/dist/PrintModal" text="模版设置" ></Myitem>
-                                <Myitem itemId="Setting" kind = {active} link="/dist/OtherSet" text="其他设置" ></Myitem>
-                                <Myitem itemId="Setting" kind = {active} link="/dist/SetLogs" text="设置日志" ></Myitem>
-                            </Navigation>
-                        </Myitem>
+                        />
                     </Navigation>
                 </div>
                 <div id="module_data" >
